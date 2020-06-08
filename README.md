@@ -10,5 +10,9 @@ In this project, I will make use of Python to explore data related to bike share
 ### Files used
 chicago.csv, new york city.csv and washington.csv
 
+### Software used
+Python 3, NumPy and pandas installed using Analconda
+A text editor Sublime
+
 ### Credits
 Credits: Udacity course
