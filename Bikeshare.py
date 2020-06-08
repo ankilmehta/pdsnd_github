@@ -2,7 +2,7 @@ import time
 import pandas as pd
 import numpy as np
 
-# Create dictionary for cities to select
+# Create dictionary for a user to select the city they want statistic and other information for
 CITY_DATA = { 'chicago': 'chicago.csv',
               'new york city': 'new_york_city.csv',
               'washington': 'washington.csv' }
