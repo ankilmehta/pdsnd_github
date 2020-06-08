@@ -24,8 +24,10 @@ def get_filters():
     cities = ['chicago','new york city','washington']
     months = ['all','january','february','march','april','june']
     days = ['all','monday','tuesday','wednesday','thursday','friday','saturday','sunday']
-    while(bool == True):
-        city = input("Enter a city name from chicago, new york city or washington \n")
+    city = input("Enter a city name from chicago, new york city or washington \n")
+    city = city.lower()
+        
+        while True:
         if(city not in cities):
           print("Please enter city name appropriately from the list \n") 
           
@@ -33,20 +35,24 @@ def get_filters():
             break
 
         # TO DO: get user input for month (all, january, february, ... , june)
-    while(bool == True):
-        month = input("Do you need data for specific month or all? If specific month then please mention the complete name of month ")
+        
+    month = input("Do you need data for specific month or all? If specific month then please mention the complete name of month ")
+    month = month.lower()
+        while True:
         if(month not in months):
-          print("Please enter month name appropriately \n") 
+          print("Please enter the month name appropriately \n") 
         else:
           break
         
         # TO DO: get user input for day of week (all, monday, tuesday, ... sunday)
-    while(bool == True):
-        day = input("Do you need data for specific weekday or all? If specific week then please mention the complete weekname of month ")
+    
+    day = input("Do you need data for specific weekday or all? If specific week then please mention the complete weekname of month ")
+    day = day.lower()
+        while True
         if(day not in days):
-          print("Please enter week name appropriately \n") 
+          print("Please enter the week name appropriately \n") 
         else:
-            bool = False
+            break
             
             
     print('-'*40)
@@ -148,10 +154,16 @@ def user_stats(df):
     print(df['User Type'].value_counts())
 
     # TO DO: Display counts of gender
-    print(df['Gender'].value_counts())
+    try:
+        print(df['Gender'].value_counts())
+    except:
+        print("Gender data is not avaialble in this city data")
 
     # TO DO: Display earliest, most recent, and most common year of birth
-    print(df['Birth Year'].mode()[0])
+    try:
+        print(df['Birth Year'].mode()[0])
+    except:
+        print("Birth Year data is not avaialble in this city data")
 
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
