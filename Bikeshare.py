@@ -26,6 +26,7 @@ def get_filters():
     days = ['all','monday','tuesday','wednesday','thursday','friday','saturday','sunday']
     while(bool == True):
         city = input("Enter a city name from chicago, new york city or washington \n")
+        city = city.lower()
         if(city not in cities):
           print("Please enter city name appropriately from the list \n") 
           
